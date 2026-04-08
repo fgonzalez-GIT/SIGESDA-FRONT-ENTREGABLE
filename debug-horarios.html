@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Debug Horarios - SIGESDA</title>
+  <style>
+    body {
+      font-family: monospace;
+      padding: 20px;
+      background: #1e1e1e;
+      color: #d4d4d4;
+    }
+    pre {
+      background: #2d2d30;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .success { color: #4ec9b0; }
+    .error { color: #f48771; }
+    .warning { color: #dcdcaa; }
+    button {
+      background: #0e639c;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 3px;
+      cursor: pointer;
+      margin: 10px 0;
+    }
+    button:hover {
+      background: #1177bb;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔍 Debug de Horarios de Actividad</h1>
+  <p>Esta página verifica la respuesta del backend para detectar problemas con horarios y días de la semana.</p>
+
+  <label for="actividadId">ID de Actividad:</label>
+  <input type="number" id="actividadId" value="26" style="padding: 5px; width: 100px;">
+  <button onclick="fetchActividad()">Obtener Actividad</button>
+
+  <div id="output"></div>
+
+  <script>
+    async function fetchActividad() {
+      const id = document.getElementById('actividadId').value;
+      const output = document.getElementById('output');
+
+      output.innerHTML = '<p class="warning">⏳ Obteniendo datos...</p>';
+
+      try {
+        const response = await fetch(`http://localhost:8000/api/actividades/${id}`);
+        const data = await response.json();
+
+        if (!data.success) {
+          output.innerHTML = `<p class="error">❌ Error: ${data.error}</p>`;
+          return;
+        }
+
+        const actividad = data.data;
+        const horarios = actividad.horarios_actividades || [];
+
+        let html = '<h2 class="success">✅ Respuesta del Backend:</h2>';
+        html += '<h3>Actividad:</h3>';
+        html += `<pre>${JSON.stringify({
+          id: actividad.id,
+          nombre: actividad.nombre,
+          codigoActividad: actividad.codigoActividad
+        }, null, 2)}</pre>`;
+
+        html += `<h3>Horarios (${horarios.length}):</h3>`;
+
+        if (horarios.length === 0) {
+          html += '<p class="warning">⚠️ No hay horarios definidos para esta actividad</p>';
+        } else {
+          horarios.forEach((h, i) => {
+            const hasDiaSemana = h.diasSemana !== null && h.diasSemana !== undefined;
+            const statusClass = hasDiaSemana ? 'success' : 'error';
+            const statusIcon = hasDiaSemana ? '✅' : '❌';
+
+            html += `<h4 class="${statusClass}">Horario #${i + 1} ${statusIcon}</h4>`;
+            html += '<pre>' + JSON.stringify(h, null, 2) + '</pre>';
+
+            // Análisis
+            html += '<p><strong>Análisis:</strong></p>';
+            html += '<ul>';
+            html += `<li>diaSemanaId: <code>${h.diaSemanaId}</code></li>`;
+            html += `<li>horaInicio (raw): <code>${h.horaInicio}</code></li>`;
+            html += `<li>horaFin (raw): <code>${h.horaFin}</code></li>`;
+
+            if (hasDiaSemana) {
+              html += `<li class="success">✅ diasSemana presente: ${h.diasSemana.nombre}</li>`;
+            } else {
+              html += `<li class="error">❌ diasSemana es NULL/undefined</li>`;
+              html += `<li class="warning">⚠️ Backend no está incluyendo la relación diasSemana</li>`;
+            }
+
+            // Verificar formato de hora
+            if (h.horaInicio && h.horaInicio.includes('T')) {
+              html += `<li class="success">✅ horaInicio es ISO timestamp (esperado): extraer con substring(11, 16)</li>`;
+            } else if (h.horaInicio && h.horaInicio.includes(':')) {
+              html += `<li class="warning">⚠️ horaInicio es formato simple HH:MM:SS</li>`;
+            }
+
+            html += '</ul>';
+          });
+        }
+
+        output.innerHTML = html;
+
+      } catch (error) {
+        output.innerHTML = `<p class="error">❌ Error de conexión: ${error.message}</p>`;
+        console.error('Error:', error);
+      }
+    }
+
+    // Auto-ejecutar al cargar
+    window.onload = () => fetchActividad();
+  </script>
+</body>
+</html>

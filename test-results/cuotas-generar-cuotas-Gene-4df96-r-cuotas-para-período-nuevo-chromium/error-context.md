@@ -1,0 +1,282 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - button [ref=e6] [cursor=pointer]:
+          - img [ref=e7]
+        - generic [ref=e9]: 🎵 SIGESDA - Sistema de Gestión Musical
+        - generic [ref=e10]:
+          - button [ref=e11] [cursor=pointer]:
+            - generic [ref=e12]:
+              - img [ref=e13]
+              - generic [ref=e15]: "4"
+          - button [ref=e16] [cursor=pointer]:
+            - generic [ref=e17]: AS
+    - generic [ref=e19]:
+      - generic [ref=e21]:
+        - heading [level=1] [ref=e22]: 🎵 SIGESDA
+        - paragraph [ref=e23]: Sistema de Gestión Musical
+      - separator [ref=e24]
+      - list [ref=e25]:
+        - listitem [ref=e26]:
+          - button [ref=e27] [cursor=pointer]:
+            - img [ref=e29]
+            - generic [ref=e32]: Dashboard
+        - listitem [ref=e33]:
+          - button [ref=e34] [cursor=pointer]:
+            - img [ref=e36]
+            - generic [ref=e39]: Personas
+            - img [ref=e40]
+        - listitem [ref=e42]:
+          - button [ref=e43] [cursor=pointer]:
+            - img [ref=e45]
+            - generic [ref=e48]: Actividades
+            - img [ref=e49]
+        - listitem [ref=e51]:
+          - button [ref=e52] [cursor=pointer]:
+            - img [ref=e54]
+            - generic [ref=e57]: Aulas
+            - img [ref=e58]
+        - listitem [ref=e60]:
+          - button [ref=e61] [cursor=pointer]:
+            - img [ref=e63]
+            - generic [ref=e66]: Participación
+        - listitem [ref=e67]:
+          - button [ref=e68] [cursor=pointer]:
+            - img [ref=e70]
+            - generic [ref=e73]: Familiares
+        - listitem [ref=e74]:
+          - button [ref=e75] [cursor=pointer]:
+            - img [ref=e77]
+            - generic [ref=e80]: Reservas
+            - img [ref=e81]
+        - listitem [ref=e83]:
+          - button [ref=e84] [cursor=pointer]:
+            - img [ref=e86]
+            - generic [ref=e89]: Recibos
+        - listitem [ref=e90]:
+          - button [ref=e91] [cursor=pointer]:
+            - img [ref=e93]
+            - generic [ref=e96]: Cuotas
+        - listitem [ref=e97]:
+          - button [ref=e98] [cursor=pointer]:
+            - img [ref=e100]
+            - generic [ref=e103]: Medios de Pago
+        - listitem [ref=e104]:
+          - button [ref=e105] [cursor=pointer]:
+            - img [ref=e107]
+            - generic [ref=e110]: Configuración
+    - main [ref=e111]:
+      - generic [ref=e113]:
+        - generic [ref=e114]:
+          - generic [ref=e115]:
+            - heading [level=1] [ref=e116]: Gestión de Cuotas
+            - paragraph [ref=e117]: Administración de cuotas, generación masiva y seguimiento de cobranzas.
+          - button [ref=e119] [cursor=pointer]:
+            - img [ref=e121]
+            - text: Generar Cuotas
+        - generic [ref=e123]:
+          - generic [ref=e126]:
+            - img [ref=e127]
+            - generic [ref=e129]:
+              - heading [level=5] [ref=e130]: $5,000
+              - paragraph [ref=e131]: Recaudado (Enero)
+          - generic [ref=e134]:
+            - img [ref=e135]
+            - generic [ref=e138]:
+              - heading [level=5] [ref=e139]: $30,000
+              - paragraph [ref=e140]: Pendiente
+          - generic [ref=e143]:
+            - img [ref=e144]
+            - generic [ref=e146]:
+              - heading [level=5] [ref=e147]: 0.0%
+              - paragraph [ref=e148]: Tasa de Cobro
+        - generic [ref=e150]:
+          - generic [ref=e151]:
+            - generic: Mes
+            - generic [ref=e152]:
+              - combobox [ref=e153] [cursor=pointer]
+              - textbox
+              - img
+              - group:
+                - generic: Mes
+          - generic [ref=e154]:
+            - generic: Año
+            - generic [ref=e155]:
+              - combobox [ref=e156] [cursor=pointer]
+              - textbox
+              - img
+              - group:
+                - generic: Año
+          - generic [ref=e157]:
+            - generic: Categoría
+            - generic [ref=e158]:
+              - combobox [ref=e159] [cursor=pointer]
+              - textbox
+              - img
+              - group:
+                - generic: Categoría
+          - button [ref=e160] [cursor=pointer]:
+            - img [ref=e162]
+            - text: Refrescar
+          - button [ref=e164] [cursor=pointer]: Limpiar Filtros
+        - generic [ref=e165]:
+          - table [ref=e166]:
+            - rowgroup [ref=e167]:
+              - row [ref=e168]:
+                - columnheader [ref=e169]: "Recibo #"
+                - columnheader [ref=e170]: Socio
+                - columnheader [ref=e171]: Período
+                - columnheader [ref=e172]: Categoría
+                - columnheader [ref=e173]: Monto Total
+                - columnheader [ref=e174]: Estado
+                - columnheader [ref=e175]: Acciones
+            - rowgroup [ref=e176]:
+              - row [ref=e177]:
+                - cell [ref=e178]: CUOTA-2026-01-1006
+                - cell [ref=e179]:
+                  - text: Roberto Carlos Pérez
+                  - generic [ref=e180]: "40333444"
+                - cell [ref=e181]: 1/2026
+                - cell [ref=e182]
+                - cell [ref=e184]: $7000
+                - cell [ref=e185]:
+                  - generic [ref=e187]: PENDIENTE
+                - cell [ref=e188]:
+                  - button [ref=e189] [cursor=pointer]:
+                    - img [ref=e190]
+              - row [ref=e192]:
+                - cell [ref=e193]: CUOTA-2026-01-1005
+                - cell [ref=e194]:
+                  - text: Ana María López
+                  - generic [ref=e195]: "35222333"
+                - cell [ref=e196]: 1/2026
+                - cell [ref=e197]
+                - cell [ref=e199]: $11000
+                - cell [ref=e200]:
+                  - generic [ref=e202]: PENDIENTE
+                - cell [ref=e203]:
+                  - button [ref=e204] [cursor=pointer]:
+                    - img [ref=e205]
+              - row [ref=e207]:
+                - cell [ref=e208]: CUOTA-2026-01-1004
+                - cell [ref=e209]:
+                  - text: Juan Pablo Rodríguez
+                  - generic [ref=e210]: "32111222"
+                - cell [ref=e211]: 1/2026
+                - cell [ref=e212]
+                - cell [ref=e214]: $8000
+                - cell [ref=e215]:
+                  - generic [ref=e217]: PENDIENTE
+                - cell [ref=e218]:
+                  - button [ref=e219] [cursor=pointer]:
+                    - img [ref=e220]
+              - row [ref=e222]:
+                - cell [ref=e223]: CUOTA-2026-01-1002
+                - cell [ref=e224]:
+                  - text: Ana María López
+                  - generic [ref=e225]: "35222333"
+                - cell [ref=e226]: 1/2026
+                - cell [ref=e227]
+                - cell [ref=e229]: $4000
+                - cell [ref=e230]:
+                  - generic [ref=e232]: PENDIENTE
+                - cell [ref=e233]:
+                  - button [ref=e234] [cursor=pointer]:
+                    - img [ref=e235]
+              - row [ref=e237]:
+                - cell [ref=e238]: CUOTA-2026-01-1001
+                - cell [ref=e239]:
+                  - text: Juan Pablo Rodríguez
+                  - generic [ref=e240]: "32111222"
+                - cell [ref=e241]: 1/2026
+                - cell [ref=e242]
+                - cell [ref=e244]: $5000
+                - cell [ref=e245]:
+                  - generic [ref=e247]: PAGADO
+                - cell [ref=e248]:
+                  - button [ref=e249] [cursor=pointer]:
+                    - img [ref=e250]
+              - row [ref=e252]:
+                - cell [ref=e253]: CUOTA-2025-12-1003
+                - cell [ref=e254]:
+                  - text: Roberto Carlos Pérez
+                  - generic [ref=e255]: "40333444"
+                - cell [ref=e256]: 12/2025
+                - cell [ref=e257]
+                - cell [ref=e259]: $4400
+                - cell [ref=e260]:
+                  - generic [ref=e262]: VENCIDO
+                - cell [ref=e263]:
+                  - button [ref=e264] [cursor=pointer]:
+                    - img [ref=e265]
+          - generic [ref=e268]:
+            - paragraph [ref=e269]: "Rows per page:"
+            - generic [ref=e270]:
+              - combobox [ref=e271] [cursor=pointer]: "20"
+              - textbox: "20"
+              - img
+            - paragraph [ref=e272]: 1–6 of 6
+            - generic [ref=e273]:
+              - button [disabled]:
+                - img
+              - button [disabled]:
+                - img
+  - dialog "Generación Masiva de Cuotas" [ref=e276]:
+    - heading "Generación Masiva de Cuotas" [level=2] [ref=e277]
+    - generic [ref=e278]:
+      - generic [ref=e279]:
+        - generic [ref=e281]:
+          - img [ref=e283]:
+            - generic [ref=e285]: "1"
+          - generic [ref=e287]: Configuración
+        - generic [ref=e291]:
+          - img [ref=e293]:
+            - generic [ref=e295]: "2"
+          - generic [ref=e297]: Validación
+        - generic [ref=e301]:
+          - img [ref=e303]:
+            - generic [ref=e305]: "3"
+          - generic [ref=e307]: Generación
+      - separator [ref=e308]
+      - generic [ref=e310]:
+        - generic [ref=e312]:
+          - generic [ref=e313]: Mes
+          - generic [ref=e314]:
+            - combobox "ENERO" [ref=e315] [cursor=pointer]
+            - textbox: "1"
+            - img
+            - group:
+              - generic: Mes
+        - generic [ref=e317]:
+          - generic [ref=e318]: Año
+          - generic [ref=e319]:
+            - spinbutton "Año" [ref=e320]: "2026"
+            - group:
+              - generic: Año
+        - generic [ref=e322]:
+          - generic: Categorías (Opcional - Vacío para todas)
+          - generic [ref=e323]:
+            - combobox [ref=e324] [cursor=pointer]
+            - textbox
+            - img
+            - group:
+              - generic: Categorías (Opcional - Vacío para todas)
+        - generic [ref=e326]:
+          - generic [ref=e327] [cursor=pointer]:
+            - switch "Aplicar Motor de Descuentos Automáticamente" [checked] [ref=e330]
+            - generic [ref=e333]: Aplicar Motor de Descuentos Automáticamente
+          - generic [ref=e334]: Si se desactiva, se generarán las cuotas base + actividades sin calcular descuentos.
+        - generic [ref=e336]:
+          - generic: Observaciones
+          - generic [ref=e337]:
+            - textbox "Observaciones" [ref=e338]
+            - group:
+              - generic: Observaciones
+    - generic [ref=e339]:
+      - button "Cancelar" [ref=e340] [cursor=pointer]
+      - button "Validar" [disabled]
+```

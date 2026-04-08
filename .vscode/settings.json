@@ -1,0 +1,10 @@
+{
+    "workbench.colorCustomizations": {
+       "titleBar.activeBackground": "#f9e64f", // Color de fondo cuando la ventana está activa
+       "titleBar.inactiveBackground": "#333333", // Color de fondo cuando la ventana está inactiva
+       "titleBar.activeForeground": "#333333", // Color del texto (título/iconos) cuando está activa
+       "titleBar.inactiveForeground": "#cccccc" // Color del texto cuando está inactiva
+   }
+
+
+}
