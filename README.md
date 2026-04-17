@@ -39,7 +39,7 @@ SIGESDA es un sistema de gestión integral diseñado para **conservatorios y aso
 ```
 Backend:    Node.js 20 + Express + TypeScript + Prisma ORM
 Base Datos: PostgreSQL 16
-Frontend:   React (en repo separado)
+Frontend:   React 18 + TypeScript 5 + Vite 5 + Material-UI v7
 Validación: Zod schemas
 Testing:    Jest
 Documentación: OpenAPI 3.0 / Swagger
